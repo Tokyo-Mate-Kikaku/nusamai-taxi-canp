@@ -102,7 +102,7 @@ h1, h2, h3, h4 {
 }
 
 .section-lead {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text-2);
   max-width: 660px;
   line-height: 1.8;
@@ -156,7 +156,7 @@ h1, h2, h3, h4 {
   justify-content: center;
   gap: 8px;
   font-family: var(--sans);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   padding: 14px 28px;
   border-radius: var(--radius-s);
@@ -213,7 +213,7 @@ h1, h2, h3, h4 {
   border-color: var(--accent-dark);
   opacity: 1;
 }
-.btn-sm { font-size: 13px; padding: 10px 20px; }
+.btn-sm { font-size: 16px; padding: 10px 20px; }
 .btn-lg { font-size: 16px; padding: 18px 36px; }
 
 /* ---------- Site Header ---------- */
@@ -257,7 +257,7 @@ h1, h2, h3, h4 {
 }
 
 .logo-text { line-height: 1.25; }
-.logo-main { font-family: var(--serif); font-weight: 700; font-size: 15px; display: block; }
+.logo-main { font-family: var(--serif); font-weight: 700; font-size: 16px; display: block; }
 .logo-sub  { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: .08em; display: block; }
 
 .header-nav {
@@ -411,7 +411,7 @@ h1, h2, h3, h4 {
 }
 
 .hero-sub {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text-2);
   margin-bottom: 28px;
   line-height: 1.8;
@@ -468,12 +468,12 @@ h1, h2, h3, h4 {
 }
 
 .reason-card h3 {
-  font-size: 17px;
+  font-size: 19px;
   margin-bottom: 10px;
 }
 
 .reason-card p {
-  font-size: 13.5px;
+  font-size: 16px;
   color: var(--text-2);
   line-height: 1.8;
 }
@@ -509,7 +509,7 @@ h1, h2, h3, h4 {
 }
 
 .service-card h3 {
-  font-size: 15px;
+  font-size: 18px;
   font-family: var(--serif);
 }
 
@@ -670,7 +670,7 @@ h1, h2, h3, h4 {
 }
 
 .page-hero p {
-  font-size: 14.5px;
+  font-size: 16px;
   color: var(--text-2);
   max-width: 600px;
   line-height: 1.8;
@@ -729,12 +729,12 @@ h1, h2, h3, h4 {
 
 .equip-card h3 {
   font-family: var(--serif);
-  font-size: 15px;
+  font-size: 18px;
   margin-bottom: 6px;
 }
 
 .equip-card .equip-spec {
-  font-size: 12.5px;
+  font-size: 16px;
   color: var(--text-2);
   line-height: 1.7;
 }
@@ -753,7 +753,7 @@ h1, h2, h3, h4 {
 }
 
 .check-item .check-mark {
-  background: var(--ink);
+  background: var(--accent);
   color: #fff;
   font-family: var(--mono);
   font-size: 11px;
@@ -765,13 +765,13 @@ h1, h2, h3, h4 {
 
 .check-item .check-text strong {
   display: block;
-  font-size: 14.5px;
+  font-size: 18px;
   font-weight: 600;
   margin-bottom: 2px;
 }
 
 .check-item .check-text span {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--text-2);
 }
 
@@ -809,14 +809,14 @@ h1, h2, h3, h4 {
 }
 
 .step-body strong {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 600;
   display: block;
   margin-bottom: 4px;
 }
 
 .step-body p {
-  font-size: 13.5px;
+  font-size: 16px;
   color: var(--text-2);
   line-height: 1.75;
 }
@@ -842,7 +842,7 @@ h1, h2, h3, h4 {
 .area-row { border-bottom: 1px dashed var(--border-s); padding-bottom: 14px; }
 .area-row:last-child { border-bottom: none; padding-bottom: 0; }
 .area-row dt { font-size: 11px; font-family: var(--mono); color: var(--accent); letter-spacing: .1em; margin-bottom: 4px; }
-.area-row dd { font-size: 14px; }
+.area-row dd { font-size: 16px; }
 
 
 /* ---------- Price Concept Diagram ---------- */
@@ -868,16 +868,6 @@ h1, h2, h3, h4 {
   color: #fff;
   border-color: var(--ink);
 }
-
-.price-concept-item .pc-label {
-  font-family: var(--mono);
-  font-size: 10.5px;
-  letter-spacing: .1em;
-  color: var(--accent);
-  margin-bottom: 6px;
-}
-
-.price-concept-item.total .pc-label { color: rgba(255,255,255,.5); }
 
 .price-concept-item h3 {
   font-size: 18px;
@@ -907,7 +897,7 @@ h1, h2, h3, h4 {
 .price-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13.5px;
+  font-size: 15px;
 }
 
 .price-table th,
@@ -922,13 +912,13 @@ h1, h2, h3, h4 {
 .price-table th {
   background: var(--bg-alt);
   font-weight: 600;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .price-table td.num {
   text-align: right;
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 15px;
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
@@ -961,7 +951,7 @@ h1, h2, h3, h4 {
 }
 
 .estimate-card h3 {
-  font-size: 15px;
+  font-size: 18px;
   margin-bottom: 4px;
 }
 
@@ -977,7 +967,7 @@ h1, h2, h3, h4 {
   align-items: baseline;
   padding: 7px 0;
   border-bottom: 1px dashed var(--border-s);
-  font-size: 13.5px;
+  font-size: 16px;
 }
 
 .estimate-row:last-of-type { border-bottom: none; }
@@ -1019,12 +1009,12 @@ h1, h2, h3, h4 {
 
 .payment-card h4 {
   font-family: var(--serif);
-  font-size: 14.5px;
+  font-size: 18px;
   margin-bottom: 4px;
 }
 
 .payment-card p {
-  font-size: 12.5px;
+  font-size: 16px;
   color: var(--text-2);
 }
 
@@ -1118,7 +1108,7 @@ h1, h2, h3, h4 {
 }
 
 .qa-question h3 {
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.5;
 }
 
@@ -1126,7 +1116,7 @@ h1, h2, h3, h4 {
   background: var(--bg-soft);
   border-top: 1px dashed var(--border);
   padding: 18px 24px;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-2);
   line-height: 1.85;
 }
@@ -1182,7 +1172,7 @@ h1, h2, h3, h4 {
   margin-bottom: 6px;
 }
 
-.profile-career { font-size: 14px; color: var(--text-2); line-height: 1.8; }
+.profile-career { font-size: 16px; color: var(--text-2); line-height: 1.8; }
 
 /* ---------- Timeline（経歴：本当に順序のある列）---------- */
 .timeline { list-style: none; margin: 0; padding: 0; }
@@ -1230,7 +1220,7 @@ h1, h2, h3, h4 {
   padding-top: 1px;
 }
 
-.t-text { font-size: 13.5px; color: var(--text-2); line-height: 1.7; }
+.t-text { font-size: 16px; color: var(--text-2); line-height: 1.7; }
 
 .badge-row {
   display: flex;
@@ -1299,7 +1289,7 @@ h1, h2, h3, h4 {
   justify-content: space-between;
   padding: 16px 20px;
   font-family: var(--sans);
-  font-size: 14.5px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--text);
   text-align: left;
@@ -1328,7 +1318,7 @@ h1, h2, h3, h4 {
   background: var(--bg-soft);
   border-top: 1px dashed var(--border);
   padding: 16px 20px;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-2);
   line-height: 1.85;
 }
