@@ -544,7 +544,14 @@ h1, h2, h3, h4 {
 
 /* ---------- Footer CTA ---------- */
 .footer-cta {
-  background: var(--accent);              /* 呉須藍。地色（糠白/白）と明確に差をつけ結びのCTAを際立たせる */
+  background-color: var(--accent);        /* フォールバック */
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--accent) 82%, transparent),
+                    color-mix(in srgb, var(--accent) 82%, transparent)),   /* 呉須カラーフィルター（前面・現状の地色を半透明化） */
+    url('../img/fv02.webp');                                               /* FV写真（背面・cover） */
+  background-size: auto, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
   border: none;
   border-radius: var(--radius-l);
   box-shadow:
