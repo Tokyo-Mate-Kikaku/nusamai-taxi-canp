@@ -307,25 +307,26 @@ h1, h2, h3, h4 {
   font-size: 16px;
 }
 
+/* アイコンのみの正方形。高さは電話CTA(.header-phone)の実高さ 42px に合わせる */
 .header-line {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 16px;
-  font-weight: 600;
-  background: var(--line);
-  color: #fff;
-  border: 1.5px solid var(--line);
-  padding: 7px 14px;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
   border-radius: var(--radius-s);
+  overflow: hidden;
 }
-.header-line:hover {
-  background: var(--line-dark);
-  border-color: var(--line-dark);
-}
+.header-line:hover { opacity: .85; }
 
-.header-line .material-icons {
-  font-size: 18px;
+.header-line img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .menu-toggle {
@@ -569,7 +570,7 @@ h1, h2, h3, h4 {
 .site-footer {
   background: var(--ink);
   color: rgba(255,255,255,.75);
-  padding: 40px 0 160px;
+  padding: 40px 0 100px;
 }
 
 .footer-inner {
@@ -684,7 +685,7 @@ h1, h2, h3, h4 {
     radial-gradient(140% 120% at 85% -25%, rgba(255,255,255,.12), rgba(255,255,255,0) 60%),  /* 右上の光沢 */
     linear-gradient(color-mix(in srgb, var(--accent-dark) 80%, transparent),
                     color-mix(in srgb, var(--accent-dark) 80%, transparent)),                 /* 呉須カラーフィルター */
-    url('../img/fv02.png');                                                                    /* FV 写真（最背面） */
+    url('../img/fv02.webp');                                                                   /* FV 写真（最背面） */
   background-repeat: repeat, no-repeat, no-repeat, no-repeat;
   background-size:   auto,   auto,      auto,      cover;
   background-position: center, center, center, center;
@@ -1022,7 +1023,7 @@ h1, h2, h3, h4 {
 .about-cover {
   width: 100%;
   height: clamp(280px, 45vw, 520px);
-  background-image: url('../img/profile_dummy.png');
+  background-image: url('../img/profile_dummy.webp');
   background-size: cover;
   background-position: center 38%;
   background-repeat: no-repeat;
@@ -1232,10 +1233,11 @@ h1, h2, h3, h4 {
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: .04em;
-  border: 1px solid var(--border);
+  background: var(--accent);
+  border: 1px solid var(--accent);
   padding: 4px 10px;
   border-radius: 3px;
-  color: var(--text-2);
+  color: #fff;
 }
 
 .divider {
@@ -1337,11 +1339,8 @@ h1, h2, h3, h4 {
   .footer-nav { text-align: left; flex-direction: row; flex-wrap: wrap; gap: 12px; }
   .price-concept { flex-direction: column; }
   .price-concept-sep { transform: rotate(90deg); align-self: center; }
-}
 
-@media (max-width: 680px) {
-  :root { --section-py: 48px; }
-
+  /* ヘッダーは ≤900px でスマホレイアウト（ハンバーガー）に切替（CTA が収まらない 900–681px の崩れ対策） */
   .header-nav { display: none; }
   .header-cta { display: none; }
   .menu-toggle { display: flex; }
@@ -1374,10 +1373,12 @@ h1, h2, h3, h4 {
     gap: 10px;
     margin-top: 12px;
   }
-  .header-cta.open .header-phone,
-  .header-cta.open .header-line {
+  .header-cta.open .header-phone {
     justify-content: center;
     padding: 12px 14px;
+  }
+  .header-cta.open .header-line {
+    align-self: center;   /* 縦積みメニューでは中央に配置（42px 正方形のまま） */
   }
 
   .header-nav.open {
@@ -1390,6 +1391,10 @@ h1, h2, h3, h4 {
     border-top: 1px solid var(--border-s);
   }
   .header-nav.open a { padding: 12px 4px; border-bottom: none; font-size: 16px; }
+}
+
+@media (max-width: 680px) {
+  :root { --section-py: 48px; }
 
   .grid-2 { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: 1fr; }
