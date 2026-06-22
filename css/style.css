@@ -202,6 +202,17 @@ h1, h2, h3, h4 {
   border-color: var(--line-dark);
   opacity: 1;
 }
+/* footer-cta QR（PC/tablet のみ、モバイルはアイコンに切替） */
+.footer-cta .btn-line { overflow: hidden; }
+.btn-line-qr {
+  height: 56px;
+  width: 56px;
+  margin-block: -18px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 3px;
+}
+.footer-cta .btn-line .material-icons { display: none; }
 /* 呉須ソリッド：hero の LINE 導線（緑の飛び出しを抑え、赤の電話CTAを主役に） */
 .btn-accent-solid {
   background: var(--accent);
@@ -725,6 +736,44 @@ h1, h2, h3, h4 {
 .page-hero-accent h1 { color: #fff; }
 .page-hero-accent p  { color: rgba(255,255,255,.82); }
 
+/* ---------- Page Nav (guide ページ内リンク) ---------- */
+.page-nav {
+  position: sticky;
+  top: 68px;
+  z-index: 99;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+}
+.page-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.page-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-family: var(--sans);
+  padding: 7px 16px;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  border-radius: var(--radius);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .15s, color .15s;
+}
+.page-nav-link:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.page-nav-link .material-icons { font-size: 16px; }
+
 /* ---------- Equipment Cards (guide page) ---------- */
 .equip-card {
   background: var(--bg);
@@ -735,7 +784,7 @@ h1, h2, h3, h4 {
 }
 
 .equip-card .equip-img {
-  height: 140px;
+  height: 200px;
   background:
     repeating-linear-gradient(135deg, transparent 0 9px, rgba(0,0,0,.06) 9px 10px),
     var(--bg-alt);
@@ -1433,6 +1482,12 @@ h1, h2, h3, h4 {
 
   .footer-cta { flex-direction: column; align-items: flex-start; }
   .footer-cta-tel { font-size: 22px; }
+  .footer-cta .btn-line .material-icons { display: inline; }
+  .btn-line-qr { display: none; }
+  .footer-cta .btn-line { overflow: visible; }
+
+  .page-nav-list { display: grid; grid-template-columns: 1fr 1fr; }
+  .page-nav-link { justify-content: center; width: 100%; }
 
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; }

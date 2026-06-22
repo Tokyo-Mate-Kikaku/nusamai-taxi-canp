@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"/Users/eiichihirai/Library/CloudStorage/OneDrive-個人用/50_株式会社東京メイト企画/01_案件管理/20260428_福祉タクシーぬさまい/website\" show f8f5be3:css/style.css)",
+      "Bash(rmdir \"/Users/eiichihirai/Library/CloudStorage/OneDrive-個人用/50_株式会社東京メイト企画/01_案件管理/20260428_福祉タクシーぬさまい/website/.git/rebase-merge\")",
+      "Bash(git -C \"/Users/eiichihirai/Library/CloudStorage/OneDrive-個人用/50_株式会社東京メイト企画/01_案件管理/20260428_福祉タクシーぬさまい/website\" status)",
+      "Bash(git -C \"/Users/eiichihirai/Library/CloudStorage/OneDrive-個人用/50_株式会社東京メイト企画/01_案件管理/20260428_福祉タクシーぬさまい/website\" remote -v)",
+      "Bash(git -C \"/Users/eiichihirai/Library/CloudStorage/OneDrive-個人用/50_株式会社東京メイト企画/01_案件管理/20260428_福祉タクシーぬさまい/website\" push origin main)",
+      "Bash(ls /Applications/ | grep -iE 'chrom|brave|edge' 2>/dev/null; echo \"---\"; ls \"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" 2>/dev/null && echo \"Chrome あり\" || echo \"Chrome なし\")",
+      "Read(//Applications/**)",
+      "Read(//Applications/Google Chrome.app/Contents/MacOS/**)",
+      "Bash(sips -g pixelWidth -g pixelHeight nusamai_index.png)",
+      "Bash(sips -c 1100 1280 --cropOffset 0 0 nusamai_index.png --out /tmp/idx_top.png)",
+      "Bash(sips -c 900 1280 --cropOffset 1000 0 nusamai_index.png --out /tmp/idx_mid.png)",
+      "Bash(sips -g pixelHeight nusamai_about.png)",
+      "Bash(sips -c 1000 1280 --cropOffset 1700 0 nusamai_about.png --out /tmp/about_profile.png)",
+      "Bash(sips -c 760 1280 --cropOffset 0 0 nusamai_about.png --out /tmp/about_cover.png)",
+      "Bash(sips -c 70 470 --cropOffset 0 810 hdr_full.png --out /tmp/hdr_cta.png)",
+      "Bash(sips -g pixelWidth -g pixelHeight hdr_cta.png)",
+      "Bash(sips -c 200 1280 --cropOffset 1640 0 wave.png --out /tmp/wave_b1.png)",
+      "Bash(sips -c 220 1280 --cropOffset 2760 0 wave.png --out /tmp/wave_b2.png)",
+      "Skill(simplify)",
+      "Skill(simplify:*)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(python3 -)",
+      "Bash(git rm *)",
+      "Bash(awk '{print $5, $9}')",
+      "Bash(grep -v '^ *$')",
+      "Bash(python3 -c \"from PIL import Image;im=Image.open\\('/tmp/eqwp.png'\\);w,h=im.size;im.crop\\(\\(0,int\\(h*0.70\\),w,int\\(h*0.86\\)\\)\\).save\\('/tmp/eqwp_c3.png'\\)\")",
+      "Bash(sips -g pixelWidth -g pixelHeight profile_dummy.webp)",
+      "Bash(awk '/pixel/{print}')",
+      "Bash(awk '{print $5\" bytes\"}')"
+    ]
+  }
+}
