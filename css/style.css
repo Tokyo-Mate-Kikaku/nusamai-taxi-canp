@@ -741,8 +741,10 @@ h1, h2, h3, h4 {
   position: sticky;
   top: 68px;
   z-index: 99;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
+  background: rgba(255,255,255,.30);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(214,209,203,.6);
   padding: 14px 0;
 }
 .page-nav-list {
@@ -761,6 +763,7 @@ h1, h2, h3, h4 {
   font-size: 14px;
   font-family: var(--sans);
   padding: 7px 16px;
+  background: var(--bg);
   border: 1.5px solid var(--accent);
   color: var(--accent);
   border-radius: var(--radius);
@@ -773,6 +776,11 @@ h1, h2, h3, h4 {
   color: #fff;
 }
 .page-nav-link .material-icons { font-size: 16px; }
+
+/* guide ページ内アンカー：ヘッダー(68px) + page-nav(約63px) 分ずらす */
+#intro, #equipment, #flow, #area {
+  scroll-margin-top: 136px;
+}
 
 /* ---------- Equipment Cards (guide page) ---------- */
 .equip-card {
