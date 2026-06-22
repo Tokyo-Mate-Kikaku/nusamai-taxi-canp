@@ -927,9 +927,9 @@ h1, h2, h3, h4 {
   max-width: 560px;
 }
 
-.area-row { border-bottom: 1px dashed var(--border-s); padding-bottom: 14px; }
+.area-row { border-bottom: 1px dashed var(--border-s); padding: 14px 0; }
 .area-row:last-child { border-bottom: none; padding-bottom: 0; }
-.area-row dt { font-size: 11px; font-family: var(--mono); color: var(--accent); letter-spacing: .1em; margin-bottom: 4px; }
+.area-row dt { font-size: 12px; font-family: var(--mono); color: var(--accent); letter-spacing: .1em; margin-bottom: 4px; }
 .area-row dd { font-size: 16px; }
 
 
