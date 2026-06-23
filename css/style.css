@@ -865,7 +865,8 @@ h1, h2, h3, h4 {
 }
 
 /* ---------- Steps ---------- */
-.steps { display: flex; flex-direction: column; gap: 14px; }
+.steps { display: flex; flex-direction: column; gap: 0; }
+.step-arrow { display: flex; justify-content: center; padding: 6px 0; }
 
 .step-item {
   display: flex;
@@ -1457,6 +1458,23 @@ h1, h2, h3, h4 {
   .header-cta { display: none; }
   .menu-toggle { display: flex; }
 
+  /* メニュー展開時の背面暗転オーバーレイ */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.4);
+    z-index: 98;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
+  }
+  body:has(.header-nav.open)::before {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  body:has(.header-nav.open) { overflow: hidden; }
+
   /* メニュー展開時：ヘッダー内部を絶対配置の overlay にし、下のコンテンツを押し下げない（シフトなし）。バー高さ(68px)は site-header の min-height で確保。 */
   .site-header:has(.open) {
     min-height: 68px;
@@ -1512,6 +1530,7 @@ h1, h2, h3, h4 {
   .grid-3 { grid-template-columns: 1fr; }
   .grid-4 { grid-template-columns: 1fr 1fr; }
   .payment-grid { grid-template-columns: 1fr; }
+  .step-arrow { padding-left: calc(36px + 18px); }
 
   .footer-cta { flex-direction: column; align-items: flex-start; }
   .footer-cta-tel { font-size: 22px; }
