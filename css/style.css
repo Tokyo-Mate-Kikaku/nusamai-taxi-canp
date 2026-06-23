@@ -57,6 +57,7 @@ html { scroll-behavior: smooth; }
 body {
   font-family: var(--sans);
   font-size: 16px;
+  font-weight: 500;
   line-height: 1.75;
   color: var(--text);
   background: var(--bg);
@@ -931,6 +932,8 @@ h1, h2, h3, h4 {
 .area-row:last-child { border-bottom: none; padding-bottom: 0; }
 .area-row dt { font-size: 12px; font-family: var(--mono); color: var(--accent); letter-spacing: .1em; margin-bottom: 4px; }
 .area-row dd { font-size: 16px; }
+.area-row dd a { color: var(--brand); text-decoration: underline; text-underline-offset: 2px; }
+.area-row dd a:hover { color: var(--brand-dark); }
 
 
 /* ---------- Price Concept Diagram ---------- */
