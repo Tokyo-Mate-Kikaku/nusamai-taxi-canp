@@ -26,7 +26,7 @@
   --line:        #06c755;  /* LINE 公式グリーン */
   --line-dark:   #05a647;  /* LINE ボタン hover */
 
-  --serif:      'Shippori Mincho', serif;        /* 見出し：温かみのある旧字系明朝 */
+  --serif:      'Noto Serif JP', serif;        /* 見出し：温かみのある旧字系明朝 */
   --sans:       'Zen Kaku Gothic New', sans-serif; /* 本文：可読性の高いヒューマニスト */
   --mono:       'Lato', sans-serif;                /* 数字・ラベル */
 
@@ -73,6 +73,10 @@ h1, h2, h3, h4 {
   font-weight: 700;
   line-height: 1.4;
   letter-spacing: .01em;
+  /*font-feature-settings: "palt";*/
+}
+h1 {
+  letter-spacing: -0.05em;
 }
 
 .section-label {
@@ -86,7 +90,7 @@ h1, h2, h3, h4 {
 }
 
 .section-title {
-  font-size: clamp(22px, 3vw, 28px);
+  font-size: clamp(24px, 3.5vw, 32px);
   margin-bottom: 12px;
 }
 
@@ -157,7 +161,7 @@ h1, h2, h3, h4 {
   justify-content: center;
   gap: 8px;
   font-family: var(--sans);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   padding: 14px 28px;
   border-radius: var(--radius-s);
@@ -225,8 +229,8 @@ h1, h2, h3, h4 {
   border-color: var(--accent-dark);
   opacity: 1;
 }
-.btn-sm { font-size: 16px; padding: 10px 20px; }
-.btn-lg { font-size: 16px; padding: 18px 36px; }
+.btn-sm { font-size: 17px; padding: 10px 20px; }
+.btn-lg { font-size: 19px; padding: 18px 36px; }
 
 /* ---------- Site Header ---------- */
 .site-header {
@@ -306,7 +310,7 @@ h1, h2, h3, h4 {
   align-items: center;
   gap: 6px;
   font-family: var(--mono);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   background: var(--brand);
   color: #fff;
@@ -416,7 +420,7 @@ h1, h2, h3, h4 {
 
 .hero-catch {
   font-family: var(--serif);
-  font-size: clamp(22px, 3.5vw, 34px);
+  font-size: clamp(26px, 4vw, 40px);
   font-weight: 700;
   line-height: 1.55;
   margin-bottom: 10px;
@@ -498,7 +502,7 @@ h1, h2, h3, h4 {
 }
 
 .reason-card h3 {
-  font-size: 19px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
@@ -539,7 +543,7 @@ h1, h2, h3, h4 {
 }
 
 .service-card h3 {
-  font-size: 18px;
+  font-size: 20px;
   font-family: var(--serif);
 }
 
@@ -708,7 +712,7 @@ h1, h2, h3, h4 {
 }
 
 .page-hero h1 {
-  font-size: clamp(24px, 4vw, 32px);
+  font-size: clamp(28px, 4.5vw, 38px);
   margin-bottom: 8px;
 }
 
@@ -1118,6 +1122,13 @@ h1, h2, h3, h4 {
   line-height: 1.9;
 }
 
+.card-brand-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 12px;
+}
+
 .card-brand-ph {
   margin-top: 12px;
   border: 1.5px dashed var(--border);
@@ -1222,7 +1233,7 @@ h1, h2, h3, h4 {
 }
 
 .qa-question h3 {
-  font-size: 19px;
+  font-size: 20px;
   line-height: 1.5;
 }
 
@@ -1364,7 +1375,7 @@ h1, h2, h3, h4 {
 
 .faq-section-title {
   font-family: var(--serif);
-  font-size: 20px;
+  font-size: 22px;
   margin-bottom: 16px;
   display: flex;
   align-items: center;
