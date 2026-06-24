@@ -34,12 +34,10 @@
   --radius:     8px;
   --radius-l:   14px;
 
-  --shadow:     2px 3px 0 var(--border);
   --shadow-card:0 1px 3px rgba(0,0,0,.08);
 
   --max-w:      1080px;
   --section-py: 72px;
-  --section-py-m:48px;
 }
 
 html { scroll-behavior: smooth; }
@@ -464,29 +462,28 @@ h1, h2, h3, h4 {
   overflow: hidden;
 }
 
-.img-ph span {
+/* 仮挿入ラベル 共通（.img-ph span / .equip-card .equip-img span / .profile-img span / .ph-tag） */
+.img-ph span,
+.equip-card .equip-img span,
+.profile-img span,
+.ph-tag {
   background: rgba(255,255,255,.85);
   border: 1px solid var(--border);
-  padding: 4px 10px;
   border-radius: 3px;
   font-family: var(--mono);
   font-size: 10.5px;
   color: var(--muted);
 }
-
-/* 実画像の上に重ねる「仮挿入」キャプション（機材カードと同デザイン）。親を position:relative にして中央配置 */
+.img-ph span,
+.profile-img span { padding: 4px 10px; }
+.equip-card .equip-img span { padding: 3px 9px; }
+/* 実画像の上に重ねる「仮挿入」キャプション。親を position:relative にして中央配置 */
 .ph-tag {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(255,255,255,.85);
-  border: 1px solid var(--border);
   padding: 3px 9px;
-  border-radius: 3px;
-  font-family: var(--mono);
-  font-size: 10.5px;
-  color: var(--muted);
   pointer-events: none;
   z-index: 2;
 }
@@ -578,7 +575,7 @@ h1, h2, h3, h4 {
     url('../img/fv02.webp');                                               /* FV写真（背面・cover） */
   background-size: auto, cover;
   background-position: center, center;
-  background-repeat: no-repeat, no-repeat;
+  background-repeat: no-repeat;
   border: none;
   border-radius: var(--radius-l);
   box-shadow:
@@ -697,24 +694,6 @@ h1, h2, h3, h4 {
 }
 .floating-phone:hover { transform: scale(1.06); }
 
-.floating-line {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  box-shadow: 0 3px 12px rgba(0,0,0,.25);
-  transition: transform .15s;
-  overflow: hidden;
-}
-.floating-line img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.floating-line:hover { transform: scale(1.06); }
-
 /* ---------- Page Hero (inner pages) ---------- */
 .page-hero {
   background: var(--bg-soft);
@@ -815,16 +794,6 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.equip-card .equip-img span {
-  background: rgba(255,255,255,.85);
-  border: 1px solid var(--border);
-  padding: 3px 9px;
-  border-radius: 3px;
-  font-family: var(--mono);
-  font-size: 10.5px;
-  color: var(--muted);
 }
 
 .equip-card .equip-body {
@@ -1194,18 +1163,6 @@ h1, h2, h3, h4 {
   max-width: 440px;
 }
 
-.about-cover-caption .feature-tag {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: .12em;
-  border: 1px solid var(--accent);
-  padding: 2px 7px;
-  border-radius: 2px;
-  color: var(--accent);
-  display: inline-block;
-  margin-bottom: 10px;
-}
-
 .about-cover-caption h2 {
   font-size: clamp(18px, 2.8vw, 24px);
   margin-bottom: 8px;
@@ -1275,16 +1232,6 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.profile-img span {
-  background: rgba(255,255,255,.85);
-  border: 1px solid var(--border);
-  padding: 4px 10px;
-  border-radius: 3px;
-  font-family: var(--mono);
-  font-size: 10.5px;
-  color: var(--muted);
 }
 
 .profile-detail {
