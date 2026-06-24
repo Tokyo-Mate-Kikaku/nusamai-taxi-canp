@@ -627,7 +627,7 @@ h1, h2, h3, h4 {
 .site-footer {
   background: var(--ink);
   color: rgba(255,255,255,.88);
-  padding: 40px 0 100px;
+  padding: 40px 0;
 }
 
 .footer-inner {
