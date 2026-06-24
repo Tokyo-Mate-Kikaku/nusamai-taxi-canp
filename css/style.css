@@ -194,6 +194,19 @@ h1, h2, h3, h4 {
   border-color: var(--accent);
   opacity: 1;
 }
+/* 反転アクセント：既定は呉須ベタ＋白文字、hover/active で白地＋呉須文字（=従来の btn-accent 既定）に戻る */
+.btn-accent-fill {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.btn-accent-fill:hover,
+.btn-accent-fill:active {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+  opacity: 1;
+}
 .btn-line {
   background: var(--line);
   color: #fff;
