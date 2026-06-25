@@ -1,6 +1,6 @@
 /* ====================================================
    福祉タクシーぬさまい — Global Stylesheet
-   Fonts: Noto Serif JP (headings) · Noto Sans JP (body)
+   Fonts: Shippori Mincho (headings) · Zen Kaku Gothic New (body)
    ==================================================== */
 
 /* ---------- Reset & Custom Properties ---------- */
@@ -26,7 +26,7 @@
   --line:        #06c755;  /* LINE 公式グリーン */
   --line-dark:   #05a647;  /* LINE ボタン hover */
 
-  --serif:      'Noto Serif JP', serif;        /* 見出し：温かみのある旧字系明朝 */
+  --serif:      'Shippori Mincho', serif;       /* 見出し：温かみのある旧字系明朝 */
   --sans:       'Zen Kaku Gothic New', sans-serif; /* 本文：可読性の高いヒューマニスト */
   --mono:       'Lato', sans-serif;                /* 数字・ラベル */
 
@@ -282,7 +282,7 @@ h1, h2, h3, h4 {
 
 .logo-text { line-height: 1.25; }
 .logo-main { font-family: var(--serif); font-weight: 700; font-size: 16px; display: block; }
-.logo-sub  { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: .08em; display: block; }
+.logo-sub  { font-family: var(--mono); font-size: 10px; letter-spacing: .08em; display: block; }
 
 .header-nav {
   display: flex;
@@ -380,31 +380,23 @@ h1, h2, h3, h4 {
 
 /* ---------- Hero ---------- */
 .hero {
-  background: var(--bg-soft);
+  display: grid;
+  background: var(--ink);
   padding: 0;
-  overflow: hidden;
+  overflow: visible;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-image-wrap {
+  grid-area: 1 / 1;
   width: 100%;
-  height: clamp(320px, 55vw, 600px);
+  height: clamp(500px, 72vw, 700px);
   background:
     repeating-linear-gradient(135deg, transparent 0 9px, rgba(0,0,0,.05) 9px 10px),
     var(--bg-alt);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
-}
-
-.hero-image-wrap .img-label {
-  background: rgba(255,255,255,.9);
-  border: 1px solid var(--border);
-  padding: 6px 14px;
-  border-radius: 3px;
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--muted);
+  overflow: hidden;
 }
 
 .hero-image-wrap picture {
@@ -420,28 +412,73 @@ h1, h2, h3, h4 {
   display: block;
 }
 
+/* 黒釉グラデーション幕 */
+.hero-image-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(46,42,39,0)    25%,
+    rgba(46,42,39,.15)  62%,
+    rgba(46,42,39,.44) 100%
+  );
+  z-index: 1;
+}
+
+/* ヒーロー下端の曲線波 */
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -51px;
+  height: 52px;
+  background-color: var(--bg-soft);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48' preserveAspectRatio='none'%3E%3Cpath d='M0,0 H1440 V19 C1190,46 980,47 770,31 C560,15 300,9 0,27 Z' fill='%23fff'/%3E%3C/svg%3E") no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48' preserveAspectRatio='none'%3E%3Cpath d='M0,0 H1440 V19 C1190,46 980,47 770,31 C560,15 300,9 0,27 Z' fill='%23fff'/%3E%3C/svg%3E") no-repeat;
+  mask-size: 100% 100%;
+  z-index: 3;
+}
+
 .hero-body {
-  padding: 44px 24px 52px;
+  grid-area: 1 / 1;
+  align-self: end;
+  padding: 0 clamp(20px, 5vw, 60px) 52px;
   max-width: var(--max-w);
+  width: 100%;
   margin: 0 auto;
+  z-index: 2;
 }
 
 .hero-catch {
-  font-family: var(--serif);
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1.55;
-  margin-bottom: 10px;
-  letter-spacing: .01em;
-  font-feature-settings: "palt";
+  font-size: clamp(25px, 3.5vw, 44px);
+  line-height: 1.5;
+  color: var(--bg-soft);
+  margin-bottom: 12px;
+  letter-spacing: 0;
+  text-shadow: 0 1px 6px rgba(0,0,0,.52);
+}
+
+.hero-catch::after {
+  content: '';
+  display: block;
+  width: 136px;
+  height: 14px;
+  margin-top: 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 136 14'%3E%3Cpath d='M2,8.6 C20,5.4 46,4.2 68,3.9 C90,3.6 112,4.2 134,5.6 C118,7.5 92,9.8 66,9.5 C44,9.2 18,9.3 2,8.6 Z' fill='%23b53d3f'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .hero-sub {
   font-size: 16px;
-  color: var(--text-2);
+  color: var(--bg);
   margin-bottom: 28px;
   line-height: 1.8;
   max-width: 560px;
+  text-shadow: 0 1px 4px rgba(0,0,0,.48);
 }
 
 .hero-actions {
@@ -574,7 +611,7 @@ h1, h2, h3, h4 {
                     color-mix(in srgb, var(--accent) 82%, transparent)),   /* 呉須カラーフィルター（前面・現状の地色を半透明化） */
     url('../img/fv02.webp');                                               /* FV写真（背面・cover） */
   background-size: auto, cover;
-  background-position: center, center;
+  background-position: center;
   background-repeat: no-repeat;
   border: none;
   border-radius: var(--radius-l);
@@ -1109,19 +1146,6 @@ h1, h2, h3, h4 {
   margin-top: 12px;
 }
 
-.card-brand-ph {
-  margin-top: 12px;
-  border: 1.5px dashed var(--border);
-  border-radius: 4px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  font-family: var(--mono);
-  color: var(--muted);
-  letter-spacing: .06em;
-}
 
 /* ---------- About — Cover ---------- */
 .about-cover {
@@ -1510,6 +1534,42 @@ h1, h2, h3, h4 {
   .page-nav-list { display: grid; grid-template-columns: 1fr 1fr; }
   .page-nav-link { justify-content: center; width: 100%; }
 
+  .hero {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-soft);
+  }
+  .hero-image-wrap {
+    height: 340px;
+    grid-area: unset;
+    flex-shrink: 0;
+  }
+  .hero-image-wrap::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(46,42,39,0)   50%,
+      rgba(46,42,39,.30) 100%
+    );
+    -webkit-mask: none;
+    mask: none;
+  }
+  .hero-body {
+    position: relative;
+    grid-area: unset;
+    z-index: 2;
+    margin-top: -72px;
+    background: var(--bg-soft);
+    box-shadow: 0 -4px 16px rgba(46,42,39,.10);
+    padding: 24px 20px 44px;
+  }
+  .hero-catch {
+    color: var(--ink);
+    text-shadow: none;
+  }
+  .hero-sub {
+    color: var(--text);
+    text-shadow: none;
+  }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; }
 
