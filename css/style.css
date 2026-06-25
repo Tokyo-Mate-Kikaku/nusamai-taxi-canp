@@ -378,6 +378,30 @@ h1, h2, h3, h4 {
 .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 
+/* ---------- Ticker ---------- */
+.ticker-wrap {
+  background: var(--accent);
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ticker {
+  display: inline-flex;
+  animation: ticker-scroll 24s linear infinite;
+}
+.ticker span {
+  color: #fff;
+  font: 500 13px/2.6 var(--sans);
+  padding: 0 2.5em;
+  letter-spacing: .04em;
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker { animation: none; }
+}
+
 /* ---------- Hero ---------- */
 .hero {
   display: grid;
