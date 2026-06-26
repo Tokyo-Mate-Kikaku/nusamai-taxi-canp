@@ -386,7 +386,7 @@ h1, h2, h3, h4 {
 }
 .ticker {
   display: inline-flex;
-  animation: ticker-scroll 24s linear infinite;
+  animation: ticker-scroll 40s linear infinite;
 }
 .ticker span {
   color: #fff;
