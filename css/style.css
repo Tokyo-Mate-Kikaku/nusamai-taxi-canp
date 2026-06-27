@@ -1001,9 +1001,9 @@ h1, h2, h3, h4 {
 }
 
 .price-concept-item.total {
-  background: var(--ink);
+  background: var(--accent);
   color: #fff;
-  border-color: var(--ink);
+  border-color: var(--accent);
 }
 
 .price-concept-item h3 {
