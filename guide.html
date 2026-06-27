@@ -13,6 +13,56 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
+  <!-- 構造化データ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://tokyo-mate-kikaku.github.io/nusamai-taxi-canp/" },
+          { "@type": "ListItem", "position": 2, "name": "ご利用案内", "item": "https://tokyo-mate-kikaku.github.io/nusamai-taxi-canp/guide.html" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "介護タクシー・民間救急サービス",
+        "serviceType": ["介護タクシー", "民間救急", "ストレッチャー搬送", "患者等搬送"],
+        "description": "ストレッチャー搬送・酸素対応・院内介助など、幅広い医療ニーズに対応した福祉輸送サービスです。益子町・芳賀郡を中心に栃木県全域に対応。",
+        "url": "https://tokyo-mate-kikaku.github.io/nusamai-taxi-canp/guide.html",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "福祉タクシーぬさまい",
+          "telephone": "+81-80-4769-4071",
+          "url": "https://tokyo-mate-kikaku.github.io/nusamai-taxi-canp/",
+          "address": {
+            "@type": "PostalAddress",
+            "postalCode": "321-4217",
+            "addressRegion": "栃木県",
+            "addressLocality": "芳賀郡益子町",
+            "streetAddress": "益子2896-2",
+            "addressCountry": "JP"
+          }
+        },
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "栃木県芳賀郡益子町" },
+          { "@type": "AdministrativeArea", "name": "栃木県" }
+        ],
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "servicePhone": {
+            "@type": "ContactPoint",
+            "telephone": "+81-80-4769-4071",
+            "contactType": "予約・相談",
+            "availableLanguage": "ja"
+          }
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- ===== TRACKING ===== -->
   <!-- Google Search Console 認証 -->
   <meta name="google-site-verification" content="2zkhqX7VvUgENSOrvvJ1nqqEa8RQcRwvDcQsqCewWVw">
