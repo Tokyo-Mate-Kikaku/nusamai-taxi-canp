@@ -980,6 +980,7 @@ h1, h2, h3, h4 {
 .area-row dd { font-size: 16px; }
 .area-row dd a { color: var(--brand); text-decoration: underline; text-underline-offset: 2px; }
 .area-row dd a:hover { color: var(--brand-dark); }
+.area-row dd a::after { font-family: 'Material Icons'; content: 'open_in_new'; font-size: 12px; vertical-align: middle; margin-left: 1px; display: inline-block; }
 
 
 /* ---------- Price Concept Diagram ---------- */
@@ -1162,6 +1163,9 @@ h1, h2, h3, h4 {
   color: var(--text-2);
   line-height: 1.9;
 }
+.payment-card-list a { color: var(--brand); text-decoration: underline; text-underline-offset: 2px; }
+.payment-card-list a:hover { color: var(--brand-dark); }
+.payment-card-list a::after { font-family: 'Material Icons'; content: 'open_in_new'; font-size: 12px; vertical-align: middle; margin-left: 1px; display: inline-block; }
 
 .card-brand-img {
   display: block;
