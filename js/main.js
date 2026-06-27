@@ -60,3 +60,19 @@ document.querySelectorAll('.header-nav a').forEach(a => {
     }
   });
 });
+
+/* Close mobile menu when tapping the backdrop (outside header-inner) */
+function closeMenu() {
+  if (!headerNav || !headerNav.classList.contains('open')) return;
+  headerNav.classList.remove('open');
+  if (headerCta) headerCta.classList.remove('open');
+  if (menuToggle) {
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'メニューを開く');
+  }
+}
+
+document.addEventListener('click', e => {
+  const headerInner = document.querySelector('.header-inner');
+  if (headerInner && !headerInner.contains(e.target)) closeMenu();
+});
