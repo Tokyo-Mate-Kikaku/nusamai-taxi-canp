@@ -1,6 +1,6 @@
 /* ====================================================
    福祉タクシーぬさまい — Global Stylesheet
-   Fonts: Shippori Mincho (headings) · Zen Kaku Gothic New (body)
+   Fonts: Shippori Mincho (headings) · Noto Sans JP (body)
    ==================================================== */
 
 /* ---------- Reset & Custom Properties ---------- */
@@ -27,7 +27,7 @@
   --line-dark:   #05a647;  /* LINE ボタン hover */
 
   --serif:      'Shippori Mincho', serif;       /* 見出し：温かみのある旧字系明朝 */
-  --sans:       'Zen Kaku Gothic New', sans-serif; /* 本文：可読性の高いヒューマニスト */
+  --sans:       'Noto Sans JP', sans-serif;         /* 本文：可読性の高いヒューマニスト */
   --mono:       'Lato', sans-serif;                /* 数字・ラベル */
 
   --radius-s:   4px;
