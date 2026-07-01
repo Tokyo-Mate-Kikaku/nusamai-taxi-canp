@@ -74,16 +74,6 @@ h1, h2, h3, h4 {
   font-feature-settings: "palt";
 }
 
-.section-label {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--accent);
-  display: block;
-  margin-bottom: 10px;
-}
-
 .section-title {
   font-size: clamp(24px, 3.5vw, 32px);
   margin-bottom: 12px;
@@ -118,7 +108,6 @@ h1, h2, h3, h4 {
 
 .section { padding: var(--section-py) 0; }
 .section.bg-soft { background: var(--bg-soft); }
-.section.bg-alt  { background: var(--bg-alt); }
 
 /* 柔らかい曲線の区切り：上セクションの地色が、わずかに非対称な曲線で下へ沈む（柿釉ブラシと同じ手仕事の揺らぎ）。色は足さず同系トーンで上品に。--wave-color で曲線色を上書き可（白→soft の境界など）。 */
 .wave-down { position: relative; z-index: 2; }
@@ -145,9 +134,7 @@ h1, h2, h3, h4 {
 
 .section-header { margin-bottom: 40px; }
 
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -550,21 +537,8 @@ h1, h2, h3, h4 {
 }
 
 /* ---------- Image Placeholder ---------- */
-.img-ph {
-  background:
-    repeating-linear-gradient(135deg, transparent 0 9px, rgba(0,0,0,.06) 9px 10px),
-    var(--bg-alt);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-s);
-  overflow: hidden;
-}
-
-/* 仮挿入ラベル 共通（.img-ph span / .equip-card .equip-img span / .profile-img span / .ph-tag） */
-.img-ph span,
+/* 仮挿入ラベル 共通（.equip-card .equip-img span / .ph-tag） */
 .equip-card .equip-img span,
-.profile-img span,
 .ph-tag {
   background: rgba(255,255,255,.85);
   border: 1px solid var(--border);
@@ -573,8 +547,6 @@ h1, h2, h3, h4 {
   font-size: 10.5px;
   color: var(--muted);
 }
-.img-ph span,
-.profile-img span { padding: 4px 10px; }
 .equip-card .equip-img span { padding: 3px 9px; }
 /* 実画像の上に重ねる「仮挿入」キャプション。親を position:relative にして中央配置 */
 .ph-tag {
@@ -671,7 +643,7 @@ h1, h2, h3, h4 {
   background-image:
     linear-gradient(color-mix(in srgb, var(--accent) 82%, transparent),
                     color-mix(in srgb, var(--accent) 82%, transparent)),   /* 呉須カラーフィルター（前面・現状の地色を半透明化） */
-    url('../img/fv02.webp');                                               /* FV写真（背面・cover） */
+    url('../img/pagefv.webp');                                               /* FV写真（背面・cover） */
   background-size: auto, cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -820,7 +792,7 @@ h1, h2, h3, h4 {
     radial-gradient(140% 120% at 85% -25%, rgba(255,255,255,.12), rgba(255,255,255,0) 60%),  /* 右上の光沢 */
     linear-gradient(color-mix(in srgb, var(--accent-dark) 80%, transparent),
                     color-mix(in srgb, var(--accent-dark) 80%, transparent)),                 /* 呉須カラーフィルター */
-    url('../img/fv02.webp');                                                                   /* FV 写真（最背面） */
+    url('../img/pagefv.webp');                                                                   /* FV 写真（最背面） */
   background-repeat: repeat, no-repeat, no-repeat, no-repeat;
   background-size:   auto,   auto,      auto,      cover;
   background-position: center, center, center, center;
@@ -1217,7 +1189,7 @@ h1, h2, h3, h4 {
 .about-cover {
   width: 100%;
   height: clamp(280px, 45vw, 520px);
-  background-image: url('../img/profile_dummy.webp');
+  background-image: url('../img/pagefv02.webp');
   background-size: cover;
   background-position: center 38%;
   background-repeat: no-repeat;
@@ -1227,19 +1199,12 @@ h1, h2, h3, h4 {
   position: relative;
   overflow: hidden;
 }
-
-.about-cover .img-label-small {
+.about-cover::before {
+  content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255,255,255,.85);
-  border: 1px solid var(--border);
-  padding: 5px 12px;
-  border-radius: 3px;
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--muted);
+  inset: 0;
+  background: rgba(0,0,0,.3);
+  pointer-events: none;
 }
 
 .about-cover-caption {
@@ -1251,6 +1216,7 @@ h1, h2, h3, h4 {
   padding: 20px 28px;
   margin: 24px;
   max-width: 440px;
+  position: relative;
 }
 
 .about-cover-caption h2 {
@@ -1344,8 +1310,6 @@ h1, h2, h3, h4 {
   letter-spacing: .1em;
   margin-bottom: 6px;
 }
-
-.profile-career { font-size: 16px; color: var(--text-2); line-height: 1.8; }
 
 /* ---------- Timeline（経歴：本当に順序のある列）---------- */
 .timeline { list-style: none; margin: 0; padding: 0; }
@@ -1502,7 +1466,6 @@ h1, h2, h3, h4 {
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .grid-3 { grid-template-columns: 1fr 1fr; }
-  .grid-4 { grid-template-columns: 1fr 1fr; }
   .payment-grid { grid-template-columns: 1fr 1fr; }
 
   .profile-grid { grid-template-columns: 1fr; }
@@ -1586,9 +1549,7 @@ h1, h2, h3, h4 {
 @media (max-width: 680px) {
   :root { --section-py: 48px; }
 
-  .grid-2 { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: 1fr; }
-  .grid-4 { grid-template-columns: 1fr 1fr; }
   .payment-grid { grid-template-columns: 1fr; }
   .step-arrow { padding-left: calc(36px + 18px); }
 
