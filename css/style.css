@@ -377,6 +377,44 @@ h1, h2, h3, h4 {
 .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+/* テキストラベル版（.menu-toggle--text / index.html のみ） */
+.menu-toggle--text {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 0;
+  width: 104px;
+  height: 48px;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-s);
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: .06em;
+  transition: background .15s;
+}
+.menu-toggle--text:hover {
+  background: var(--accent-dark);
+}
+.menu-toggle--text::before { content: 'メニュー'; }
+.menu-toggle--text[aria-expanded="true"]::before { content: '閉じる'; }
+.menu-toggle--text::after {
+  font-family: 'Material Icons';
+  content: 'keyboard_arrow_down';
+  font-size: 18px;
+  line-height: 1;
+  margin-left: 2px;
+  vertical-align: middle;
+  transition: transform .2s ease-out;
+}
+.menu-toggle--text[aria-expanded="true"]::after { transform: rotate(180deg); }
+.menu-toggle--text[aria-expanded="true"] {
+  background: var(--accent-dark);
+}
+
 
 /* ---------- Ticker ---------- */
 .ticker-wrap {
@@ -1475,6 +1513,7 @@ h1, h2, h3, h4 {
   .price-concept-sep { transform: rotate(90deg); align-self: center; }
 
   /* ヘッダーは ≤900px でスマホレイアウト（ハンバーガー）に切替（CTA が収まらない 900–681px の崩れ対策） */
+  .site-header .container { padding: 0 16px; }
   .header-nav { display: none; }
   .header-cta { display: none; }
   .menu-toggle { display: flex; }
@@ -1509,8 +1548,8 @@ h1, h2, h3, h4 {
     height: auto;
     flex-wrap: wrap;
     align-content: flex-start;
-    gap: 0 24px;
-    padding: 0 24px 16px;
+    gap: 0;
+    padding: 0 16px 16px;
     background: rgba(255,255,255,.98);
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
